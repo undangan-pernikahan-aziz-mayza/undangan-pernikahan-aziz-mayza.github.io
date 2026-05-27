@@ -334,46 +334,80 @@
     border-color: #fff;
   }
 
-  .rekening-card {
-    background: #1e1e1e;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    text-align: left;
+  .rek-card {
+    background: var(--color-background-secondary);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    text-align: left;
   }
 
-  .rek-info .rek-bank {
-    font-size: 11px;
-    color: var(--color-text-muted);
-    letter-spacing: 1px;
-    margin-bottom: 5px;
+  .rek-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
   }
 
-  .rek-info .rek-number {
+  .bank-logo {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .bank-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .rek-info {
+    min-width: 0;
+  }
+
+  .rek-nomor {
     font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    color: var(--color-gold);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    letter-spacing: 1px;
     margin-bottom: 3px;
+    line-height: 1.2;
   }
 
-  .rek-info .rek-owner {
-    font-size: 13px;
-    font-weight: 700;
-    color: #fff;
+  .rek-nama {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .btn-copy {
+  .copy-btn {
+    flex-shrink: 0;
     background: transparent;
-    border: 1px solid #444;
-    color: #fff;
-    padding: 6px 15px;
-    border-radius: 6px;
+    border: 0.5px solid #B8966B;
+    color: #B8966B;
+    border-radius: 8px;
+    padding: 7px 14px;
     font-size: 12px;
     cursor: pointer;
+    letter-spacing: 1px;
+    font-family: 'Lato', sans-serif;
+    white-space: nowrap;
   }
+  .copy-btn:hover { background: rgba(184,150,107,0.12); }
 
   /* Scroll Animation Styles */
   .reveal {
@@ -556,24 +590,40 @@
       Bagi yang ingin memberikan hadiah secara online, dapat melalui nomor rekening berikut. Doa dan kehadiran Anda adalah hadiah terbesar bagi kami.
     </p>
 
-    <div class="rekening-card">
-      <div class="rek-info">
-        <div class="rek-bank">BCA</div>
-        <div class="rek-number">8545755684</div>
-        <div class="rek-owner">a.n. Mochamad Azis Soleh</div>
+     <div class="rek-card">
+    <div class="rek-left">
+      <div class="bank-logo" style="background:#005BAA;">
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+          <rect width="52" height="52" rx="10" fill="#005BAA"/>
+          <text x="26" y="20" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" letter-spacing="1">BANK</text>
+          <text x="26" y="35" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" letter-spacing="0.5">BCA</text>
+        </svg>
       </div>
-      <button class="btn-copy" onclick="salinRek('8545755684', this)">Salin</button>
-    </div>
-
-    <div class="rekening-card">
       <div class="rek-info">
-        <div class="rek-bank">BCA</div>
-        <div class="rek-number">1510662039</div>
-        <div class="rek-owner">a.n. Mayza Ranni Putri</div>
+        <div class="rek-nomor">8545 7556 84</div>
+        <div class="rek-nama">a.n. Mochamad Azis Soleh</div>
       </div>
-      <button class="btn-copy" onclick="salinRek('1510662039', this)">Salin</button>
     </div>
+    <button class="copy-btn" onclick="salinRek('8545755684', this)">Salin</button>
   </div>
+
+  <div class="rek-card">
+    <div class="rek-left">
+      <div class="bank-logo" style="background:#005BAA;">
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" width="52" height="52">
+          <rect width="52" height="52" rx="10" fill="#005BAA"/>
+          <text x="26" y="20" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="900" fill="#FFFFFF" letter-spacing="1">BANK</text>
+          <text x="26" y="35" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" letter-spacing="0.5">BCA</text>
+        </svg>
+      </div>
+      <div class="rek-info">
+        <div class="rek-nomor">1510 6620 39</div>
+        <div class="rek-nama">a.n. Mayza Ranni Putri</div>
+      </div>
+    </div>
+    <button class="copy-btn" onclick="salinRek('1510662039', this)">Salin</button>
+  </div>
+</div>
 
   <div class="ornament-star reveal">✦</div>
   
