@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Undangan Pernikahan Azis & Mayza</title>
+
+  <!-- Open Graph / Social Media Preview -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Undangan Pernikahan Azis & Mayza">
+  <meta property="og:description" content="Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i untuk hadir di acara pernikahan kami.">
+  <meta property="og:image" content="https://repository-images.githubusercontent.com/placeholder-image.png"> <!-- Ganti dengan link gambar asli jika sudah ada -->
+  <meta property="og:url" content="https://yourusername.github.io/your-repo-name"> <!-- Akan otomatis menyesuaikan saat di-hosting -->
+
+  <!-- WhatsApp Specific -->
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap');
+
+  :root {
+    --color-gold: #B8966B;
+    --color-gold-light: #D4AF37;
+    --color-bg: #1A1A1A;
+    --color-card: #212121;
+    --color-input: #2a2a2a;
+    --color-text: #ffffff;
+    --color-text-muted: #aaaaaa;
+    --shadow: 0 10px 40px rgba(0,0,0,0.5);
+    --border-radius: 12px;
+  }
+
+  body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: var(--color-text);
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+  }
+
+  body.no-scroll {
+    overflow: hidden;
+  }
+
+  /* Cover Styles */
+  .cover-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    box-sizing: border-box;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
+  .cover-overlay.hide {
+    transform: translateY(-100%);
+  }
+
+  .cover-content {
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid rgba(184, 150, 107, 0.3);
+    padding: 4rem 2rem;
+    border-radius: 30px;
+    position: relative;
+  }
+
+  /* Decorative corners for cover */
+  .cover-content::before, .cover-content::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-gold);
+  }
+  .cover-content::before { top: 15px; left: 15px; border-right: none; border-bottom: none; border-top-left-radius: 15px; }
+  .cover-content::after { bottom: 15px; right: 15px; border-left: none; border-top: none; border-bottom-right-radius: 15px; }
+
+  .cover-label {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .cover-bismillah {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--color-text-muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .cover-names {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 2rem 0;
+    color: #fff;
+  }
+
+  .cover-names span {
+    display: block;
+    color: var(--color-gold);
+    font-size: 32px;
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+
+  .cover-info {
+    font-size: 14px;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+  }
+
+  .cover-guest-box {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin: 2.5rem 0;
+    border: 0.5px solid rgba(184, 150, 107, 0.2);
+  }
+
+  .cover-guest-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-text-light);
+    margin-bottom: 8px;
+  }
+
+  .cover-guest-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .btn-buka {
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+  }
+  .btn-buka:hover {
+    background: var(--color-gold);
+    color: #fff;
+  }
+
+  .cover-footer {
+    font-size: 11px;
+    color: var(--color-text-light);
+    margin-top: 2rem;
+  }
+
+  /* Main Wrap Styles Update for Dark Theme */
+  .wedding-wrap {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+    text-align: center;
+    background: #1a1a1a;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    min-height: 100vh;
+  }
+
+  .ornament-star {
+    color: var(--color-gold);
+    font-size: 18px;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .ornament-star::before, .ornament-star::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.5;
+  }
+
+  .section-text {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+
+  .card {
+    background: var(--color-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius);
+    padding: 2rem 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+
+  .card-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .profile-parents {
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+
+  .couple-names-main {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #fff;
+    margin: 2.5rem 0;
+  }
+  .couple-names-main span {
+    display: block;
+    color: var(--color-gold);
+    font-size: 28px;
+    font-style: italic;
+    margin: 0.5rem 0;
+  }
+
+  .card-title-sm {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .card-date-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--color-gold);
+    margin: 0.5rem 0;
+  }
+
+  .card-sub-info {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .btn-outline:hover {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
+
+  .rsvp-input {
+    width: 100%;
+    background: var(--color-input);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #fff;
+    margin-bottom: 12px;
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+  }
+  .rsvp-input:focus {
+    border-color: var(--color-gold);
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .btn-submit:hover {
+    border-color: #fff;
+  }
+
+  .rekening-card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .rek-info .rek-bank {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .rek-info .rek-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--color-gold);
+    margin-bottom: 3px;
+  }
+
+  .rek-info .rek-owner {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .btn-copy {
+    background: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+
+  /* Scroll Animation Styles */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+
+  .music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(184, 150, 107, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    animation: rotate 5s linear infinite;
+    display: none;
+  }
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .music-control.paused {
+    animation-play-state: paused;
+    opacity: 0.7;
+  }
+</style>
+</head>
+<body class="no-scroll">
+
+<audio id="backsound" loop>
+  <source src="bck/1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-control" id="musicBtn" onclick="toggleMusic()">
+  🎵
+</div>
+
+<div class="cover-overlay" id="cover">
+  <p class="cover-label">Undangan Pernikahan</p>
+  <p class="cover-bismillah">Bismillahirrahmanirrahim</p>
+
+  <h1 class="cover-names">
+    Azis
+    <span>&</span>
+    Mayza
+  </h1>
+
+  <div class="cover-info">
+    Senin, 15 Juni 2026<br>
+    Warungpring, Pemalang
+  </div>
+
+  <div class="cover-guest-box">
+    <p class="cover-guest-label">Kepada Yth.</p>
+    <p class="cover-guest-name">Bapak / Ibu / Saudara/i Tamu Undangan</p>
+  </div>
+
+  <button class="btn-buka" onclick="bukaUndangan()">
+    📩 Buka Undangan
+  </button>
+
+  <p style="font-size: 11px; color: var(--color-text-muted); margin-top: 2rem;">
+    Ketuk untuk membuka undangan
+  </p>
+</div>
+
+<div class="wedding-wrap">
+  <h1 class="sr-only">Undangan Pernikahan Mayza Ranni Putri & Mochamad Azis Soleh</h1>
+
+  <div class="reveal">
+    <p class="cover-label" style="margin-top: 0;">Undangan Pernikahan</p>
+    <p class="cover-bismillah">Bismillahirrahmanirrahim</p>
+
+    <p class="section-text">
+      Dengan memohon ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam tasyakuran pernikahan kami:
+    </p>
+  </div>
+
+  <div class="card reveal">
+    <div class="profile-block">
+      <div class="profile-name">Mochamad Azis Soleh</div>
+      <div class="profile-parents">Putra dari Bapak & Ibu</div>
+    </div>
+    
+    <div class="ornament-star">✦</div>
+
+    <div class="profile-block">
+      <div class="profile-name">Mayza Ranni Putri</div>
+      <div class="profile-parents">Putri dari Bapak & Ibu</div>
+    </div>
+  </div>
+
+  <h2 class="couple-names-main reveal">
+    Azis
+    <span>&</span>
+    Mayza
+  </h2>
+
+  <div class="ornament-star reveal"></div>
+
+  <div class="card reveal">
+    <span class="card-label">📅 Rangkaian Acara</span>
+    
+    <!-- Pengajian -->
+    <div style="margin-bottom: 2rem;">
+      <div class="card-title-sm">Pengajian (Mempelai Pria)</div>
+      <div class="card-date-big" style="font-size: 24px;">Minggu, 14 Juni 2026</div>
+      <div class="card-sub-info">
+        Pukul 19.30 WIB – Selesai<br>
+        Jl. Kebon Arum Indah III No.02 RT 2 RW 5<br>
+        Pucang Gading, Mranggen
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Kebon+Arum+Indah+III+No.02+RT+2+RW+5+Pucang+Gading+Mranggen" target="_blank" class="btn-outline" style="margin-top: 0.8rem; padding: 6px 15px;">
+        🗺️ Peta Lokasi
+      </a>
+    </div>
+
+    <div style="width: 50px; height: 1px; background: rgba(184, 150, 107, 0.3); margin: 1.5rem auto;"></div>
+
+    <!-- Akad & Resepsi -->
+    <div>
+      <div class="card-title-sm">Akad & Resepsi</div>
+      <div class="card-date-big" style="font-size: 24px;">Senin, 15 Juni 2026</div>
+      <div class="card-sub-info">
+        Akad: 08.00 WIB<br>
+        Resepsi: 11.00 – 14.00 WIB
+      </div>
+      <div class="card-sub-info" style="margin-top: 0.5rem;">
+        Jl. Kyai Johar, Ds. Sugandu, Warungpring<br>
+        Kab. Pemalang, Jawa Tengah
+      </div>
+      <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Kyai+Johar,+Karangdawa,+Warungpring,+Pemalang" target="_blank" class="btn-outline" style="margin-top: 0.8rem; padding: 6px 15px;">
+        🗺️ Peta Lokasi
+      </a>
+    </div>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-label">✉️ Konfirmasi Kehadiran</span>
+    <input type="text" class="rsvp-input" id="rsvp-nama" placeholder="Nama Anda" />
+    <select class="rsvp-input" id="rsvp-hadir">
+      <option value="">-- Apakah Anda hadir? --</option>
+      <option value="hadir">Hadir</option>
+      <option value="tidak">Berhalangan</option>
+    </select>
+    <input type="number" class="rsvp-input" id="rsvp-jumlah" placeholder="Jumlah tamu (orang)" min="1" max="10" />
+    <button class="btn-submit" onclick="kirimRSVP()">Kirim Konfirmasi</button>
+    <p id="rsvp-msg" style="font-size:13px; color:var(--color-gold); margin-top:10px; font-weight:700; min-height:18px;"></p>
+  </div>
+
+  <div class="card reveal">
+    <span class="card-label">🎁 Kirim Hadiah / Donasi</span>
+    <p class="section-text" style="padding:0; margin-bottom:1.5rem;">
+      Bagi yang ingin memberikan hadiah secara online, dapat melalui nomor rekening berikut. Doa dan kehadiran Anda adalah hadiah terbesar bagi kami.
+    </p>
+
+    <div class="rekening-card">
+      <div class="rek-info">
+        <div class="rek-bank">BCA</div>
+        <div class="rek-number">8545755684</div>
+        <div class="rek-owner">a.n. Mochamad Azis Soleh</div>
+      </div>
+      <button class="btn-copy" onclick="salinRek('8545755684', this)">Salin</button>
+    </div>
+
+    <div class="rekening-card">
+      <div class="rek-info">
+        <div class="rek-bank">BCA</div>
+        <div class="rek-number">1510662039</div>
+        <div class="rek-owner">a.n. Mayza Ranni Putri</div>
+      </div>
+      <button class="btn-copy" onclick="salinRek('1510662039', this)">Salin</button>
+    </div>
+  </div>
+
+  <div class="ornament-star reveal">✦</div>
+  
+  <div class="reveal">
+    <p class="section-text" style="font-style:italic;">
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir.
+    </p>
+    
+    <p class="section-text" style="margin-top: 1.5rem; margin-bottom: 0.5rem;">
+      Wassalamu'alaikum Wr. Wb.
+    </p>
+    
+    <p style="font-family:'Playfair Display',serif; font-size:20px; font-weight:700; color:var(--color-gold);">
+      Azis &amp; Mayza
+    </p>
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById('backsound');
+  const musicBtn = document.getElementById('musicBtn');
+  let isPlaying = false;
+
+  document.body.classList.add('no-scroll');
+
+  function bukaUndangan() {
+    document.getElementById('cover').classList.add('hide');
+    document.body.classList.remove('no-scroll');
+    musicBtn.style.display = 'flex';
+    playMusic();
+    window.scrollTo(0, 0);
+    initReveal();
+  }
+
+  function initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => observer.observe(reveal));
+  }
+
+  function playMusic() {
+    audio.play();
+    isPlaying = true;
+    musicBtn.classList.remove('paused');
+  }
+
+  function toggleMusic() {
+    if (isPlaying) {
+      audio.pause();
+      musicBtn.classList.add('paused');
+    } else {
+      audio.play();
+      musicBtn.classList.remove('paused');
+    }
+    isPlaying = !isPlaying;
+  }
+
+  function kirimRSVP() {
+    const nama = document.getElementById('rsvp-nama').value.trim();
+    const hadir = document.getElementById('rsvp-hadir').value;
+    const jumlah = document.getElementById('rsvp-jumlah').value;
+    const msg = document.getElementById('rsvp-msg');
+    
+    if (!nama || !hadir) { 
+      msg.textContent = 'Mohon lengkapi data konfirmasi.'; 
+      return; 
+    }
+
+    const nomorWA = "62882003813082";
+    const teksHadir = hadir === 'hadir' ? 'Hadir' : 'Berhalangan';
+    const teksJumlah = jumlah ? ` (Jumlah tamu: ${jumlah} orang)` : '';
+    
+    const pesan = `Halo, saya ${nama}. Ingin mengonfirmasi kehadiran di pernikahan Azis & Mayza.\n\nStatus: ${teksHadir}${teksJumlah}.\n\nTerima kasih!`;
+    
+    const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+    
+    window.open(url, '_blank');
+    
+    msg.textContent = 'Membuka WhatsApp...';
+    setTimeout(() => {
+      msg.textContent = 'Konfirmasi dikirim via WhatsApp.';
+    }, 2000);
+  }
+
+  function salinRek(nomor, btn) {
+    navigator.clipboard.writeText(nomor).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Tersalin!';
+      setTimeout(() => btn.textContent = orig, 2000);
+    });
+  }
+</script>
+</body>
+</html>
